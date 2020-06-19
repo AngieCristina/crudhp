@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Harry Potter Quotes</title>
+</head>
+
+<body>
+  <h1>He Who Must Not Be Named</h1>
+  <form action="/quotes" method="POST">
+    <input type="text" placeholder="name" name="name">
+    <input type="text" placeholder="quote" name="quote">
+    <button type="submit">Submit</button>
+  </form>
+  <h2> Quotes </h2>
+
+  <ul class="quotes">
+    <!-- Loop through quotes -->
+    <% for(var i = 0; i < quotes.length; i++) {%>
+    <li class="quote">
+      <!-- Output name from the iterated quote object -->
+      <span><%= quotes[i].name %></span>:
+      <!-- Output quote from the iterated quote object -->
+      <span><%= quotes[i].quote %></span>
+    </li>
+    <% } %>
+  </ul>
+
+  <div>
+    <h2>Voldemort!</h2>
+    <p>
+      Replace friends Harry Potter's quote with a quote written by Voldemort
+    </p>
+    <button id="update-button">Replace Yoda's quote</button>
+  </div>
+  <script src="/main.js"></script>
+</body>
+
+</html>
